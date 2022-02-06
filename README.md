@@ -52,3 +52,13 @@ Before checking in again:
 // Freeze requirements
 $ pip freeze > requirements.txt
 ```
+
+## Deploy
+
+Compile and test
+```
+python setup.py sdist bdist_wheel
+twine check dist/*
+twine upload --repository-url https://test.pypi.org/legacy/ dist/*
+twine upload dist/*
+```
